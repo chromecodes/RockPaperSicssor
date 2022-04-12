@@ -58,26 +58,13 @@ function game() {
     console.log('The computer score is: '+computerScore )
     console.log('Your score is: '+playerScore )
     if ( computerScore < playerScore) {
-        return "Congrat's You Won the Game "
+        return "Congrat's!! You Won the Game. "
     } else if ( computerScore > playerScore ) {
-        return "what a pity you lost the game"
+        return "What a Pity! You Lost The Game."
     } else {
-        return " what a game but it's a draw wonna go again"
+        return " What a Game!, but it's a Draw, Wonna go Again."
     }
     }
     console.log(score())
 }
 game()
-/*
-function loop(){
-    for(let i=0; i<5; i++) {
-    console.log(i)
-        function multiple(){
-        let num = prompt("give a number", )
-        return num*num
-        }
-    console.log(multiple())
-    }
-
-}
-console.log(loop())*/
