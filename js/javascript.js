@@ -36,6 +36,7 @@ function playRound(playerSelection,computerSelection) {
     }    
 }
 
+
 function score() {  
     comment.textContent = (playRound(playerSelection, computerSelection))
     if ((playRound(playerSelection, computerSelection)) === `You Won! `+ playerSelection +` beats `+ computerSelection+`.` ) {
@@ -46,16 +47,17 @@ function score() {
         computerScore += 1;
         cScore.textContent = computerScore;
      } 
+     
  }
  
-function result(){
+function results(){
+    score();
     if ( playerScore === 5) {
-        return "Congrat's!! You Won the Game. "
+        result.textContent = "Congrat's!! You Won the Game. "
     } else if ( computerScore === 5 ) {
-        return "What a Pity! You Lost The Game."
-    } else {
-       score();
-    }
+        result.textContent = "What a Pity! You Lost The Game."
+    }  
+   
 }
 /* function playAgain(){
     playerScore = 0;
@@ -68,13 +70,13 @@ const cScore = document.getElementById('cScore');
 
 const comment= document.getElementById('comment')
 
-const result= document.getElementById('comment')
+const result= document.getElementById('result')
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => { button.addEventListener('click', function(e) {
     playerSelection = button.value;
     computerSelection = computerChoice();
-    result();
+    results();
     console.log(playerSelection);
     console.log(computerSelection);
     console.log(playRound(playerSelection, computerSelection));
