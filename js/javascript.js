@@ -36,7 +36,8 @@ function playRound(playerSelection,computerSelection) {
     }    
 }
 
-function score() {   
+function score() {  
+    comment.textContent = (playRound(playerSelection, computerSelection))
     if ((playRound(playerSelection, computerSelection)) === `You Won! `+ playerSelection +` beats `+ computerSelection+`.` ) {
         playerScore += 1;
         pScore.textContent = playerScore;
@@ -64,6 +65,10 @@ function result(){
 const pScore = document.getElementById('pScore');
 
 const cScore = document.getElementById('cScore');
+
+const comment= document.getElementById('comment')
+
+const result= document.getElementById('comment')
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => { button.addEventListener('click', function(e) {
