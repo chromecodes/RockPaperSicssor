@@ -17,7 +17,7 @@ function computerChoice() {
         break;
     }
 }
-/*
+
 function playRound(playerSelection,computerSelection) {
     if (playerSelection === computerSelection) {
         return `it's a tie`
@@ -34,7 +34,7 @@ function playRound(playerSelection,computerSelection) {
     } else if ( playerSelection == "Scissor" && computerSelection == "Paper") {
         return `You Won! `+ playerSelection +` beats `+ computerSelection+`.`
     }    
-}*/
+}
 
 /*
 function round() {   
