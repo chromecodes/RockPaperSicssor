@@ -19,6 +19,8 @@ function computerChoice() {
 }
 
 function playRound(playerSelection,computerSelection) {
+    pChoice.innerText = playerSelection;
+    cChoice.textContent = computerSelection;
     if (playerSelection === computerSelection) {
         return `it's a tie`;
     } else if ( playerSelection == "Rock" && computerSelection == "Paper") {
@@ -67,6 +69,10 @@ function results(){
 const pScore = document.getElementById('pScore');
 
 const cScore = document.getElementById('cScore');
+
+const pChoice = document.getElementById('pChoice');
+
+const cChoice = document.getElementById('cChoice');
 
 const comment= document.getElementById('comment')
 
