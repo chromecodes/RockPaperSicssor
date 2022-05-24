@@ -39,9 +39,11 @@ function playRound(playerSelection,computerSelection) {
 function score() {   
     if ((playRound(playerSelection, computerSelection)) === `You Won! `+ playerSelection +` beats `+ computerSelection+`.` ) {
         playerScore += 1;
+        pScore.textContent = playerScore;
 
      } else if ( (playRound(playerSelection, computerSelection)) === `You Lose! `+ computerSelection +` beats `+playerSelection+`.`){
         computerScore += 1;
+        cScore.textContent = computerScore;
      } 
  }
  
@@ -59,7 +61,9 @@ function result(){
     computerScore = 0;
     result();
 }*/ 
+const pScore = document.getElementById('pScore');
 
+const cScore = document.getElementById('cScore');
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => { button.addEventListener('click', function(e) {
