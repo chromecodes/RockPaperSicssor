@@ -1,6 +1,6 @@
 let computerSelection =
-computerScore = 0
-playerScore = 0
+computerScore = 0;
+playerScore = 0;
 playerSelection = "";
 
 
@@ -20,7 +20,7 @@ function computerChoice() {
 
 function playRound(playerSelection,computerSelection) {
     if (playerSelection === computerSelection) {
-        return `it's a tie`
+        return `it's a tie`;
     } else if ( playerSelection == "Rock" && computerSelection == "Paper") {
         return `You Lose! `+ computerSelection +` beats `+playerSelection+`.`
     } else if ( playerSelection == "Rock" && computerSelection == "Scissor") {
@@ -36,25 +36,33 @@ function playRound(playerSelection,computerSelection) {
     }    
 }
 
-/*
-function round() {   
+function score() {   
     if ((playRound(playerSelection, computerSelection)) === `You Won! `+ playerSelection +` beats `+ computerSelection+`.` ) {
-        playerScore += 1
+        playerScore += 1;
 
      } else if ( (playRound(playerSelection, computerSelection)) === `You Lose! `+ computerSelection +` beats `+playerSelection+`.`){
-        computerScore += 1
+        computerScore += 1;
      } 
- }*/
+ }
+ 
+function result(){
+    if ( playerScore === 5) {
+        return "Congrat's!! You Won the Game. "
+    } else if ( computerScore === 5 ) {
+        return "What a Pity! You Lost The Game."
+    } else {
+       score();
+    }
 
-
+}
 
 
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => { button.addEventListener('click', function(e) {
     playerSelection = button.value;
-    computerSelection = computerChoice()
-    round()
+    computerSelection = computerChoice();
+    result();
     console.log(playerSelection);
     console.log(computerSelection);
     console.log(playRound(playerSelection, computerSelection));
@@ -63,7 +71,7 @@ buttons.forEach((button) => { button.addEventListener('click', function(e) {
   });
 });
 
-  
+
         
    
     
