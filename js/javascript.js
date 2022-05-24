@@ -53,9 +53,12 @@ function result(){
     } else {
        score();
     }
-
 }
-
+/* function playAgain(){
+    playerScore = 0;
+    computerScore = 0;
+    result();
+}*/ 
 
 
 const buttons = document.querySelectorAll('button');
