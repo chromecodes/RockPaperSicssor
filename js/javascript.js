@@ -18,9 +18,26 @@ function computerChoice() {
     }
 }
 
+function choice(playerSelection,computerSelection){
+    if (playerSelection == "Rock") {
+        pChoice.innerText = "✊";
+    }  else if (playerSelection == "Paper") {
+        pChoice.innerText = "✋";
+    } else {
+        pChoice.innerText = "✌";
+    };
+
+    if (computerSelection == "Rock") {
+        cChoice.innerText = "✊";
+    }  else if (computerSelection == "Paper") {
+        cChoice.innerText = "✋";
+    } else {
+        cChoice.innerText = "✌";
+    };
+}
+
 function playRound(playerSelection,computerSelection) {
-    pChoice.innerText = playerSelection;
-    cChoice.textContent = computerSelection;
+   choice(playerSelection,computerSelection)
     if (playerSelection === computerSelection) {
         return `it's a tie`;
     } else if ( playerSelection == "Rock" && computerSelection == "Paper") {
@@ -68,7 +85,7 @@ function playAgain(){
     pScore.textContent = playerScore;
     computerScore = 0;
     cScore.textContent = computerScore;
-    result();
+    
 }
 const pScore = document.getElementById('pScore');
 
@@ -114,3 +131,7 @@ buttons.forEach((button) => { button.addEventListener('click', function(e) {
     console.log(score())
 }
 */
+
+// new code 
+ 
+//pChoice.innerText = String.fromCodePoint(parseInt(9994));
