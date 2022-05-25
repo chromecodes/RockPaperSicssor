@@ -56,16 +56,20 @@ function results(){
     score();
     if ( playerScore === 5) {
         result.textContent = "Congrat's!! You Won the Game. "
+        playAgain()
     } else if ( computerScore === 5 ) {
         result.textContent = "What a Pity! You Lost The Game."
+        playAgain()
     }  
    
 }
-/* function playAgain(){
+function playAgain(){
     playerScore = 0;
+    pScore.textContent = playerScore;
     computerScore = 0;
+    cScore.textContent = computerScore;
     result();
-}*/ 
+}
 const pScore = document.getElementById('pScore');
 
 const cScore = document.getElementById('cScore');
