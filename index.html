@@ -9,32 +9,64 @@
     
 </head>
 <body>
-    <div class="title"> Rock Paper Scissor </div>
-    <div class="buttons">
-        <ul>
-            <li><button class="button" value ="Rock"> ✊</button></li>
-            <li><button class="button" value ="Paper"> ✋ </button></li>
-            <li><button class="button" value ="Scissor"> ✌ </button></li>
-        </ul>
-    </div>
-    <div id="choice">
-        <div id = "pChoice"></div> 
-        <div id = "cChoice"></div>	
-    </div>
-    <div id="scoreBox">
-        <div id="pScore">
-            0
+
+<header class="title"> Rock Paper Scissor </header>
+
+<div class="container">
+    <div class="game">
+       
+        <div class="buttons left">
+            <ul>
+                <li><p class="button" > </p></li>
+                <li><p class="button rtn"> </p></li>
+                <li><p class="button rtn"> </p></li>
+            </ul>
         </div>
-        <div id="cScore">
-            0
+        <div class="choice">
+            <div id = "cChoice"></div>	
         </div>
-    </div >
-    <div id="comment">
+                
+        
+
+        <div class="choice">
+            <div id = "pChoice"></div> 
+        </div>
+
+        <div class="buttons right " >
+            <ul>
+                <li><button class="button" value ="Rock"> ✊</button></li>
+                <li><button class="button rtn" value ="Paper"> ✋ </button></li>
+                <li><button class="button rtn" value ="Scissor"> ✌ </button></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="center">
+        <div id="scoreBox">
+            <div id="cScore" >
+                0
+            </div>
+            <p> - </p>
+            <div id="pScore">
+                0
+            </div>
+        </div >
+        <div id="comment">
         commentry
+        </div>
     </div>
+    
+        <div>
     <div id="result">
-        result
+        
     </div>
+   
+    
+
+        </div>
+</div>
+<footer class="foot"> Copyright ©  </footer>
     <script src="./js/javascript.js"></script>
 </body>
 </html>
