@@ -23,16 +23,20 @@ function choice(playerSelection,computerSelection){
         pChoice.innerText = "✊";
     }  else if (playerSelection == "Paper") {
         pChoice.innerText = "✋";
+        
     } else {
         pChoice.innerText = "✌";
+       
     };
 
     if (computerSelection == "Rock") {
         cChoice.innerText = "✊";
     }  else if (computerSelection == "Paper") {
         cChoice.innerText = "✋";
+
     } else {
         cChoice.innerText = "✌";
+        
     };
 }
 
