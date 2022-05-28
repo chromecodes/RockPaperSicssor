@@ -43,7 +43,7 @@ function choice(playerSelection,computerSelection){
 function playRound(playerSelection,computerSelection) {
    choice(playerSelection,computerSelection)
     if (playerSelection === computerSelection) {
-        return `it's a tie`;
+        return `It's a Tie`;
     } else if ( playerSelection == "Rock" && computerSelection == "Paper") {
         return `You Lose! `+ computerSelection +` beats `+playerSelection+`.`
     } else if ( playerSelection == "Rock" && computerSelection == "Scissor") {
@@ -61,37 +61,51 @@ function playRound(playerSelection,computerSelection) {
 
 
 function score() {  
-    comment.textContent = (playRound(playerSelection, computerSelection))
-    if ((playRound(playerSelection, computerSelection)) === `You Won! `+ playerSelection +` beats `+ computerSelection+`.` ) {
-        playerScore += 1;
-        pScore.textContent = playerScore;
+    if( playerScore === 5 || computerScore === 5){
+        results();
+    } else {
+        comment.textContent = (playRound(playerSelection, computerSelection))
+        if ((playRound(playerSelection, computerSelection)) === `You Won! `+ playerSelection +` beats `+ computerSelection+`.` ) {
+            playerScore += 1;
+            pScore.textContent = playerScore;
+            results();
 
-     } else if ( (playRound(playerSelection, computerSelection)) === `You Lose! `+ computerSelection +` beats `+playerSelection+`.`){
-        computerScore += 1;
-        cScore.textContent = computerScore;
-     } 
-     
+        } else if ( (playRound(playerSelection, computerSelection)) === `You Lose! `+ computerSelection +` beats `+playerSelection+`.`){
+            
+            computerScore += 1;
+            cScore.textContent = computerScore;
+            results();
+            
+        } 
+    }
 }
  
 function results(){
-    score();
     if ( playerScore === 5) {
         modal.style.display = "block";
         modal.classList.add("won");
         info.innerHTML = "Congrat's!!"+"<br>"+"You Won."
-        closeB.textContent = "Play Again"
-        closeB.addEventListener("click", playAgain)
+        again.textContent = "Play Again"
+        again.addEventListener("click", playAgain)
+        window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
         
     } else if ( computerScore === 5 ) {
         modal.style.display = "block"
         modal.classList.add("lose");
         info.innerHTML = "What a Pity! "+"<br>"+"You Lost."
-        closeB.textContent = "Try Again"
-        closeB.addEventListener("click", playAgain)
+        again.textContent = "Try Again"
+        again.addEventListener("click", playAgain)
+        window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
     }  
 }
-
-
 
 function playAgain(){
     modal.style.display = "none"
@@ -103,53 +117,25 @@ function playAgain(){
 }
 
 const pScore = document.getElementById('pScore');
+cScore = document.getElementById('cScore');
+pChoice = document.getElementById('pChoice');
+cChoice = document.getElementById('cChoice');
+comment= document.getElementById('comment');
+modal = document.getElementById('myModal');
+again = document.getElementById('again');
+info = document.getElementById('info');
+buttons = document.querySelectorAll('button');
 
-const cScore = document.getElementById('cScore');
-
-const pChoice = document.getElementById('pChoice');
-
-const cChoice = document.getElementById('cChoice');
-
-const comment= document.getElementById('comment');
-
-const modal = document.getElementById('myModal');
-
-const closeB = document.getElementById('close');
-
-const info = document.getElementById('info');
-
-const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => { button.addEventListener('click', function(e) {
     playerSelection = button.value;
     computerSelection = computerChoice();
-    results();
-    console.log(playerSelection);
-    console.log(computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
-    console.log(playerScore);
-    console.log(computerScore);
+    //results();
+    score();
+
+
   });
 });
 
-
-        
-   
-    
-        /*
-    function score (){
-    console.log('The computer score is: '+computerScore )
-    console.log('Your score is: '+playerScore )
-    if ( computerScore < playerScore) {
-        return "Congrat's!! You Won the Game. "
-    } else if ( computerScore > playerScore ) {
-        return "What a Pity! You Lost The Game."
-    } else {
-        return " What a Game!, but it's a Draw, Wonna go Again."
-    }
-    }
-    console.log(score())
-}
-*/
 
 // new code 
  
