@@ -1,41 +1,40 @@
 *{
     margin: 0;
     padding: 0;
-    font-size: 30px;
+    font-size: 60px;
+    color: #22bc22;
 }
 html{
     height: 100%;
 }
 body{
-    background-color: lightgray;
+    background-color: #222831;
     min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    
 }
-
 li {
     text-decoration: none;
     list-style: none;
 }
 header{
     background-color: black;
-    color: white;
+    color: #22bc22;
     text-align: center;
-    padding: 5px;
-    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 36px;
     text-transform: uppercase;
-
+    border-bottom: 3px solid;
 }
 footer{
     background-color: black;
-    color: white;
+    color: #22bc22;
     text-align: center;
-    padding: 5px;
-    font-size: 8px;
-    
-    
+    padding: 10px;
+    font-size: 16px;
+    border-top: 3px solid;
 }
 ul {
     list-style-type: none;
@@ -43,22 +42,18 @@ ul {
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 32px;
 }
-
-
 .container{
     flex: 1;
 }
-
 .game {
-    margin:  20px 20px 20px 20px;
+    margin:  40px 40px;
     display: flex;
     flex-wrap: wrap; 
     justify-content: space-between;
 
 }
-
 .center{
     width: 88px;
     display: flex;
@@ -68,38 +63,39 @@ ul {
 }
 #comment{
     text-align: center;
-    padding: 10px 10px ;;
-    font-size: 10px;
-    width: 88px;
-    height: 50px;
-    margin-bottom:-22px;
+    background-color: #111720;
+    padding: 20px 20px ;
+    font-size: 20px;
+    width: 250px;
+    height: 90px;
+    margin-bottom:-50px;
     border: 1px solid black;
     box-sizing: content-box;
     border-radius: 10px 10px 0px 0px;
-    padding: ;
-
 }
 #scoreBox {
     flex: 0;
-    width: 44px;
-    margin-top: -22px;
+    width: 100px;
+    height: 50px;
+    margin-top: -40px;
+    background-color: #111720;
     border: 1px black solid;
     border-top: 0px;
-    padding:  0px 6px ;
-    box-shadow: 10px;
+    padding:  0px 9px 3px 9px;
     display: flex;
-    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
     border-radius: 0px 0px 10px 10px;
 }
-
 .button{
-    width: 60px;
-    height: 60px;
-    font-size: 50px;
-    color: aliceblue;
-    background-color: black;
+    width: 120px;
+    height: 120px;
+    font-size: 100px;
+    color: #00dbf8;
+    background-color: #111720;
+    border: 2px black solid;
     border-radius: 25%;
-    
 }
 .choice{
     justify-self: center;
@@ -108,11 +104,66 @@ ul {
 }
 .battle {
     text-align: center;
-    justify-content: center;
-    font-size: 50px;
-    width: 60px;
-    height: 60px;
+    width: 120px;
+    height: 120px;
+    color: #22bc22;
+    background-color: #111720;
+    font-size: 100px;
     border: 1px black solid;
+    border-radius: 25%;
+}
+.c{
+    color: red;
+}
+.p{
+    color: #00dbf8;
+}
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    padding-top: 241px; 
+    top: 0%;
+}
+.modal-content {
+    background-color: #222831;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid rgb(0, 0, 0);
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-radius: 15px;
+    font-size: 42px;
+}
+#info {
+    font-size: 32px;
+    text-align: center;
+}
+#close{
+    width: 125px;
+    height: 45px;
+    font-size: 18px;
+    color: #00dbf8;
+    background-color: #111720;
+    border: 2px black solid;
+    border-radius: 10px;
+}
+.won{
+  background-color: #00dbf86b; 
+}
+.lose{
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+.ndis{
+    display: none;
 }
 .rtn {
     transform: rotate(-90deg);
@@ -126,4 +177,8 @@ ul {
     -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
     -o-transform: matrix(-1, 0, 0, 1, 0, 0);
     transform: rotate(90deg) matrix(-1, 0, 0, 1, 0, 0);
+}
+.border-gradient {
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #00dbf8, rgb(252, 0, 0) );
 }

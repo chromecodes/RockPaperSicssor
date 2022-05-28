@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<header class="title"> Rock Paper Scissor </header>
+<header class="title border-gradient"> Rock Paper Scissor </header>
 
 <div class="container">
     <div class="game">
@@ -23,16 +23,16 @@
             </ul>
         </div>
         <div class="choice">
-            <div id = "cChoice" class="battle mirror ">b</div>	
+            <div id = "cChoice" class="c battle mirror">b</div>	
         </div>
                 
         <div class="center">
             <div id="scoreBox">
-                <div id="cScore" >
+                <div id="cScore" class="">
                     0
                 </div>
                 <p> - </p>
-                <div id="pScore">
+                <div id="pScore" class="">
                     0
                 </div>
             </div >
@@ -42,7 +42,7 @@
         </div>
 
         <div class="choice">
-            <div id = "pChoice" class="battle rtn ">a</div> 
+            <div id = "pChoice" class="p battle rtn ">a</div> 
         </div>
 
         <div class="buttons right " >
@@ -52,21 +52,17 @@
                 <li><button class="button rtn" value ="Scissor"> ✌ </button></li>
             </ul>
         </div>
-
+    </div>   
+    
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p id="info"></p>
+        <button id="close"> play again </button>           
     </div>
-
-    
-    
-        <div>
-    <div id="result">
-        
-    </div>
-   
-    
-
-        </div>
 </div>
-<footer class="foot"> Copyright ©  </footer>
+
+</div>
+<footer class="foot border-gradient"> Copyright ©  </footer>
     <script src="./js/javascript.js"></script>
 </body>
 </html>

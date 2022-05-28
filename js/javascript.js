@@ -71,26 +71,37 @@ function score() {
         cScore.textContent = computerScore;
      } 
      
- }
+}
  
 function results(){
     score();
     if ( playerScore === 5) {
-        result.textContent = "Congrat's!! You Won the Game. "
-        playAgain()
+        modal.style.display = "block";
+        modal.classList.add("won");
+        info.innerHTML = "Congrat's!!"+"<br>"+"You Won."
+        closeB.textContent = "Play Again"
+        closeB.addEventListener("click", playAgain)
+        
     } else if ( computerScore === 5 ) {
-        result.textContent = "What a Pity! You Lost The Game."
-        playAgain()
+        modal.style.display = "block"
+        modal.classList.add("lose");
+        info.innerHTML = "What a Pity! "+"<br>"+"You Lost."
+        closeB.textContent = "Try Again"
+        closeB.addEventListener("click", playAgain)
     }  
-   
 }
+
+
+
 function playAgain(){
+    modal.style.display = "none"
     playerScore = 0;
     pScore.textContent = playerScore;
     computerScore = 0;
-    cScore.textContent = computerScore;
-    
+    cScore.textContent = computerScore;  
+    modal.classList.remove("lose");
 }
+
 const pScore = document.getElementById('pScore');
 
 const cScore = document.getElementById('cScore');
@@ -99,9 +110,13 @@ const pChoice = document.getElementById('pChoice');
 
 const cChoice = document.getElementById('cChoice');
 
-const comment= document.getElementById('comment')
+const comment= document.getElementById('comment');
 
-const result= document.getElementById('result')
+const modal = document.getElementById('myModal');
+
+const closeB = document.getElementById('close');
+
+const info = document.getElementById('info');
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => { button.addEventListener('click', function(e) {
